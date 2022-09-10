@@ -1,0 +1,62 @@
+<mat-dialog-content class="mat-typography">
+    <div class="container" >
+        <div class="row">
+            <div class="col-12" class="d-flex justify-content-between align-items-center">
+            <h1 class="heading">Create a New Task</h1>
+            <button mat-raised-button color="primary" (click)="saveTask()">Save</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-8">
+              <form [formGroup]="formGroup">
+                  <mat-form-field  appearance="fill" class="form-field">
+                    <mat-label>Enter Task Name...</mat-label>
+                    <textarea matInput class="mainInput" formControlName="taskName" name="taskName"></textarea>
+                  </mat-form-field>
+                  <textarea placeholder="Enter description" class="descInput" formControlName="taskDescription" name="taskDescription"></textarea>
+                  <label class="subHeading">Subtasks
+                  </label>
+                  <section class="mt-2 mb-4" *ngFor="let item of subtasks;let i=index">
+                    <p><mat-checkbox  class="checkbox" [checked]="item.checked" (change)="setCheckValue($event,i)">{{item.des}}</mat-checkbox></p>
+                  </section>
+                  <mat-form-field  appearance="fill" class="form-field">
+                    <mat-label >Enter SubTask Name</mat-label>
+                    <textarea matInput class="checkbox"  formControlName="subtask" name="subtask"></textarea>
+                  </mat-form-field>
+                  <button mat-raised-button color="primary" class="mb-4" (click)="saveSubtask()">Save subtask</button>
+                  </form>
+                  <div class="image-div">
+                    <img id="preview"  alt="">
+                    <input type="file" name="file" id="file" (change)="previewImage($event)" />
+                  </div>
+                 
+                
+            </div>
+            <div class="col-4">
+                <mat-card *ngFor="let card of tasks;let i=index" class="mt-4 mb-4 ml-2 mr-2" [ngStyle]="{'background-color':card.color}">
+                    <mat-card-header>
+                      <mat-card-title>{{card?.taskname}}</mat-card-title>
+                    </mat-card-header>
+                    <hr>
+                    <mat-card-content class="overflow">
+                      <p>
+                        {{card.taskdescription}}
+                      </p>
+                    </mat-card-content>
+                    <ul *ngFor="let sub of card.subtasklist">
+                      <li>{{sub.des}}</li>
+                    </ul>
+                    <mat-card-actions>
+                      <button *ngIf="i!==0" mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="deleteCard(i)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </mat-card-actions>
+                  </mat-card>                     
+                  
+                  
+                  
+            </div>
+        </div>
+    </div>
+    </mat-dialog-content>
