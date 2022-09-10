@@ -64,7 +64,7 @@ export class DialogComponent implements OnInit {
         taskdescription:this.formGroup?.controls?.taskDescription?.value,
         color:this.getColor()
       }
-      this.tasks.push(taskObject)
+      this.tasks.splice(1,0,taskObject)
       this.formGroup.reset();
     }
     
