@@ -1,8 +1,8 @@
 {
-    "dealerLocationCode":"Dealer Location Code",
-    "DealerData":"Dealer Data",
-    "AGCOHours":"AGCO Hours",
-    "country":"Country",
-    "location":"Location",
-    "machineCategory":"Machine Category"
+    "dealerLocationCode": "Dealer Location Code",
+    "DealerData": "Dealer Data",
+    "AGCOHours": "AGCO Hours",
+    "country": "Country",
+    "location": "Location",
+    "machineCategory": "Machine Category"
 }
