@@ -1,0 +1,8 @@
+{
+    "dealerLocationCode":"code d'emplacement du concessionnaire",
+    "DealerData":"données du concessionnaire",
+    "AGCOHours":"AGCO heures",
+    "country":"pays",
+    "location":"emplacement",
+    "machineCategory":"catégorie de machines"
+}
